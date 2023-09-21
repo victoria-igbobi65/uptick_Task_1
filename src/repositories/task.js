@@ -9,6 +9,10 @@ const saveTask = async (newTaskObject) => {
 
 const getATask = async (taskId, ownerId) => {
     const task = await taskModel.findOne({ _id: taskId, owner: ownerId })
+    if(!task) throw new AppError(
+        `task with id: ${taskId} not found`,
+        StatusCodes.NOT_FOUND
+    )
     return task
 }
 
@@ -28,12 +32,14 @@ const deleteATask = async (taskId, ownerId) => {
         )
 }
 
-const editATask = async (taskId, taskObject) => {
-    return await taskModel.findByIdAndUpdate(
-        taskId,
-        { $set: taskObject },
+const editATask = async (taskId, ownerId, taskObject) => {
+    const task = await taskModel.findOneAndUpdate(
+        { _id: taskId, owner: ownerId },
+        taskObject,
         { new: true, runValidators: true }
     )
+    if (!task) throw new AppError(`task with id: ${taskId} not found`, StatusCodes.NOT_FOUND)
+    return task;  
 }
 
-moduke.exports = { saveTask, getATask, getAllTasks, editATask, deleteATask }
+module.exports = { saveTask, getATask, getAllTasks, editATask, deleteATask }

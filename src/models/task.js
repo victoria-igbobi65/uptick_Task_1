@@ -17,7 +17,8 @@ const taskSchema = new schema({
     },
     status: {
         type: String,
-        enum: ["completed", "in_progress"]
+        enum: ["completed", "in_progress", "undone"],
+        default: "undone"
     },
     owner: {
         type: mongoose.Types.ObjectId,
