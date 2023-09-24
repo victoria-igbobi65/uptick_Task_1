@@ -130,24 +130,6 @@ To run the test
 #### Get all my tasks
 * Route: /api/v1/tasks
 * Method: GET
-* Query: 
-  * q : queryString 
-  ```java
-  /api/v1/note/?q=wordToSearch
-  ```
-  * sort : sort notes in ascending or descending order given a specified format. To sort in descending order, add a `-` prefix before a field, seperate multiple values with a `,`.
-  Accepted Values:
-    * title
-    * body
-    * createdAt
-    ```java
-      /api/v1/note/?sort=title,-body,createdAt
-    ```
-  * page [default: 1]
-  * limit [default: 20] 
-  ```java
-    /api/v1/note/?page=1&limit=10
-  ```
 * Response
 
 ```java
