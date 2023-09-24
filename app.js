@@ -17,8 +17,8 @@ app.use(cors())
 app.use(morgan('dev'))
 app.use(helmet())
 
-app.use('api/v1/auth', userRouter)
-app.use('api/v1/task', taskRouter)
+app.use('/api/v1/auth', userRouter)
+app.use('/api/v1/task', taskRouter)
 app.use('*', unknownEndpoint);
 app.use(errorGlobalHandler);
 module.exports = { app };

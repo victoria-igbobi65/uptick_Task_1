@@ -53,6 +53,7 @@ To run the test
 
 ### Base URL
 
+https://zipper-capybara.cyclic.cloud
 
 ### Usage
 
