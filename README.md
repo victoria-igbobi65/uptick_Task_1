@@ -26,11 +26,11 @@ A simple backend API that allows users create, read, update and delete their tas
  
 Firstly, you need to clone the repository into your local machine
 ```javascript
-$ git clone https://github.com/victoria-igbobi65/beerkathon.git
+$ git clone https://github.com/victoria-igbobi65/uptick_Task_1.git
 ```
 Secondly, change directory into the project file
 ```
-$ cd chatbot 
+$ cd uptick_task_1
 ```
 Thirdly, you need to install the dependencies.
 ```javascript
